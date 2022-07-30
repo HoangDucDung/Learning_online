@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- Navbar Start -->
@@ -9,9 +10,9 @@
             </a>
             <div class="navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="home" class="nav-item nav-link active">Home</a>
-                    <a href="courses.html" class="nav-item nav-link">Courses</a>
-                    <a href="blog" class="nav-item nav-link">Blog</a>
+                    <a href="home" class="nav-item nav-link ${(param["page"] == "Home") ? "active" : ""}">Home</a>
+                    <a href="courses" class="nav-item nav-link ${(param["page"] == "Courses") ? "active" : ""}">Courses</a>
+                    <a href="blog" class="nav-item nav-link ${(param["page"] == "Blog") ? "active" : ""}">Blog</a>
                 </div>
                 <a href="login" class="btn-primary">Join Now <i class="fa-solid fa-arrow-right"></i></a>
             </div>
@@ -24,10 +25,10 @@
             </a>
             <div class="navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="home" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Courses</a>
-                    <a href="#" class="nav-item nav-link">My Courses</a>
-                    <a href="blog" class="nav-item nav-link">Blog</a>
+                    <a href="home" class="nav-item nav-link ${(param["page"] == "Home") ? "active" : ""}">Home</a>
+                    <a href="courses" class="nav-item nav-link ${(param["page"] == "Courses") ? "active" : ""}">Courses</a>
+                    <a href="my-course" class="nav-item nav-link ${(param["page"] == "My Courses") ? "active" : ""}">My Courses</a>
+                    <a href="blog" class="nav-item nav-link ${(param["page"] == "Blog") ? "active" : ""}">Blog</a>
                 </div>
                 <div id="top-bar">
                     <ul>
@@ -55,6 +56,33 @@
                                     <i class="fa-solid fa-list-check"></i>
                                     Activity Log
                                 </a>
+                                <c:choose>
+                                    <c:when test="${sessionScope.account.role.id == 1}">
+                                        <a class="dropdown-item" href="management/course">
+                                            <i class="fa-solid fa-bars-progress"></i>
+                                            Management
+                                        </a>
+                                    </c:when>
+                                    <c:when test="${sessionScope.account.role.id == 3}">
+                                        <a class="dropdown-item" href="management/dashboard">
+                                            <i class="fa-solid fa-bars-progress"></i>
+                                            Management
+                                        </a>
+                                    </c:when>
+                                    <c:when test="${sessionScope.account.role.id == 4}">
+                                        <a class="dropdown-item" href="management/dashboard">
+                                            <i class="fa-solid fa-bars-progress"></i>
+                                            Management
+                                        </a>
+                                    </c:when>
+                                    <c:when test="${sessionScope.account.role.id == 5}">
+                                        <a class="dropdown-item" href="management/dashboard">
+                                            <i class="fa-solid fa-bars-progress"></i>
+                                            Management
+                                        </a>
+                                    </c:when>
+                                </c:choose>
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout">
                                     <i class="fa-solid fa-right-from-bracket"></i>

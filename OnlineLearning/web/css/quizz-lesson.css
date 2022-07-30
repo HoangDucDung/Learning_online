@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.quiz-header-left a i {
+    color: #fff;
+}
+
+.quiz-header {
+    background-color: #29303b;
+    color: #fff;
+    padding: 20px 30px 15px 30px;
+}
+
+.quiz-header-left {
+    display: flex;
+    font-size: 30px;
+}
+
+.quiz-header-left h4 {
+    color: #fff;
+    margin-left: 30px;
+}
+
+.quiz-body {
+    height: 500px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.quiz-title {
+    margin: 30px 10px;
+}
+
+.quizz-test {
+    background-color: gray;
+}
+
+
+
+

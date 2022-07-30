@@ -24,7 +24,7 @@ public class HomeController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         SliderDAO sliderDB = new SliderDAO();
-        ArrayList<Slider> sliders = sliderDB.getSliders();
+        ArrayList<Slider> sliders = sliderDB.getSlidersDisplay();
         CourseAccountDAO courseAccountDAO = new CourseAccountDAO();
         ArrayList<CourseAccount> bestRatedCourses = courseAccountDAO.getBestRatedCourses();
         BlogDAO blogDAO=new BlogDAO();

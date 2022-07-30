@@ -1,21 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    ${account.email}
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="../logout">Logout</a></li>
-                </ul>
-            </li>
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="navbar-nav me-auto mb-lg-0">
         </ul>
+
+        <form class="d-flex">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ${account.email}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end me-4" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="../logout">Logout</a></li>
+            </ul>
+        </form>
     </div>
 </nav>
 
-<div class="col-12">
-    <div class="d-flex alight-item-center p-2">
-        <h4 class="mb-0">${param["page"]}</h4>
-    </div>
+<div class="d-flex p-2 bd-highlight mb-4 border-bottom align-items-center bg-white">
+    <div class="fs-4 font-weight-bold">${param["page"]}</div>
 </div>

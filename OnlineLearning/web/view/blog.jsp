@@ -2,17 +2,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html translate="no">
+<html>
     <head>
+        <title>Blog</title>
         <jsp:include page="base-view/baseTag.jsp"></jsp:include>
-
+            <script src="https://code.jquery.com/jquery-1.10.0.min.js" 
+                    integrity="sha256-2+LznWeWgL7AJ1ciaIG5rFP7GKemzzl+K75tRyTByOE=" crossorigin="anonymous">
+            </script> 
             <link href="css/blog.css" rel="stylesheet" type="text/css" />
             <title>Blog</title>
         </head>
 
         <body>
 
-        <jsp:include page="base-view/headerUser.jsp"></jsp:include>
+        <jsp:include page="base-view/headerUser.jsp?page=Blog"></jsp:include>
 
             <!-- Intro Start -->
 
@@ -25,31 +28,59 @@
         </div>
 
         <!-- Intro End -->
+        <div id="my-course-header">
+            <div id="form-search-info">
+                <input type="date" class="selected-tag" id="date-join" name="date-join" onchange="searchProperty()"/>
+                <div class="display-flex">
+                    <input type="text" id="search-my-course" placeholder="Search for blog..." onkeyup="searchProperty()">
+                    <button type="button" id="search-icon" onclick="searchProperty()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="display-flex position-relative afterTemp">
+                    <p class="fa-solid fa-filter icon-filter"></p>
+                    <div id="search-category">
+                        <form>
+                            <div id="holder-search-input">
+                                <input type="text" id="holder-search-category" onkeyup="searchCategory()"
+                                       placeholder="Search for category...">
+                                <button type="button" id="clear-btn" onclick="clearValueSearch()">Clear</button>
+                            </div>
+                            <div id="form-select-category">  
+                                <c:forEach items="${listBC}" var="bc">
+                                    <div class="search-category-item">
 
-        <!-- Blog Start -->
-        <div class="container-xxl">
-            <div class="search">
-                <div class="search-child">
-                    <form action="blog" method="get">
-                        <input type="text" value="${search}" name="search" placeholder="Search" id="search-input">
-                    </form>
+                                        <div class="display-flex justify-between">
+                                            <div class="search-category-name">
+                                                <input type="checkbox" id="id-category-${bc.blogCategoryID}" onchange="checkedCategory(this)">
+                                                <label for="id-category-${bc.blogCategoryID}">${bc.name}</label>
+                                            </div>
+                                            <i class="fa-solid fa-angle-down icon-down-cate" onclick="dropDownSubCate(this)"></i>
+                                        </div>
+                                        <div class="search-sub-category">
+                                            <c:forEach items="${listSubCate}" var="sub">
+                                                <c:if test="${sub.blogCategoryId.blogCategoryID == bc.blogCategoryID}">
+                                                    <div class="search-sub-category-name">
+                                                        <input type="checkbox" id="id-sub-category-${sub.blogSubCategoryId}" onchange="checkedSubCategory(this)" name="search-category" value="${sub.blogSubCategoryId}">
+                                                        <label for="id-sub-category-${sub.blogSubCategoryId}">${sub.subCategoryName}</label>
+                                                    </div>
+                                                </c:if>                                            
+                                            </c:forEach>                 
+                                        </div>
+                                    </div>  
+                                </c:forEach>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- Blog Start -->
+        <div class="container-xxl">
             <div id="container">
-
                 <div class="blog-container">
                     <div class="blog-container-left">
-                        <ul class="blog-container-right-toppic-list">
-                            <li class="blog-container-right-toppic-item">
-                                <a href="blog" class="${bcid == null ? 'active-category-blog' : ''}">All Category</a>
-                            </li>
-                            <c:forEach items="${bcList}" var="bc">
-                                <li class="blog-container-right-toppic-item">
-                                    <a href="blog?bcid=${bc.getBlogCategoryID()}" class="${bc.getBlogCategoryID() == bcid ? 'active-category-blog' : ''}">${bc.getName()}</a>
-                                </li>
-                            </c:forEach>
-                            
-                        </ul>
+                        
                         <ul class="blog-list" id="container-left">
                             <c:choose>
                                 <c:when test="${blogList == null}">
@@ -61,9 +92,9 @@
                                             <a href="blog-detail?blogID=${bl.blogID}">
                                                 <div class="blog-item-header">
                                                     <div class="blog-item-author">
-                                                        <img src="img/${bl.getAuthorID().profilePictureUrl}"
+                                                        <img src="img/${bl.authorID.profilePictureUrl}"
                                                              alt="" class="blog-item-author-avatar">
-                                                        <span class="blog-item-author-name">${bl.getAuthorID().firstName} ${bl.getAuthorID().lastName}</span>
+                                                        <span class="blog-item-author-name">${bl.authorID.firstName} ${bl.authorID.lastName}</span>
                                                     </div>
                                                 </div>
                                                 <div class="blog-item-body">
@@ -82,21 +113,28 @@
                                     </c:forEach>
                                 </c:otherwise>
                             </c:choose>
-
                         </ul>
-                        <c:choose>
-                            <c:when test="${not empty blogList}">                        
-                                <%@include file="page.jsp" %>
-                            </c:when>
-                        </c:choose>
+                        <div id="pagination-page">
+                            <div class="pagination">
+                                <ul class="pagination-list">
+                                    <li>
+                                        <button onclick="pagination(${page-1==0?1:page-1})" class="previous-btn">Previous</button>
+                                    </li>
+                                    <c:forEach begin="1" end="${totalpage}" var="p">
+                                        <li>
+                                            <button onclick="pagination(${p})" ${p==page?"class='paging-active page-num'":"class='page-num'"} >${p}</button>
+                                        </li>
+                                    </c:forEach>
+                                    <li>
+                                        <button onclick="pagination(${page+1>totalpage?totalpage:page+1})" class="next-btn" >Next</button>
+                                    </li>
+                                </ul>
+                                <input type="hidden" id="page-num" value="${page}">
+                            </div>    
+                        </div>
                     </div>
                     <div class="blog-container-right">                  
-                        <form action="blog" method="get" class="margin-top-20 search-date">
-                            <div>
-                                <input type="week" value="${searchweek}" name="SearchWeek" id="search-input">
-                                <button type="submit" id="search-input"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
+                        
                         <div class="blog-container-right-title margin-top-20" >
                             <h3>Most views</h3>
                         </div>
@@ -134,6 +172,7 @@
         <!-- Blog End -->
 
         <jsp:include page="base-view/footerUser.jsp"></jsp:include>
+        <script src="js/blog.js"></script>
     </body>
 
 </html>

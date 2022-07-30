@@ -40,7 +40,7 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
         String remember = request.getParameter("remember");
         
-        Account account = new AccountDAO().getAccount(emailAddress, password);
+        Account account = new AccountDAO().getAccountForLogin(emailAddress, password);
 
         if (account == null) {
             request.setAttribute("error", "Email or password is incorrect");

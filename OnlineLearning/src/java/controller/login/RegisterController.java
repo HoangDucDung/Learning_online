@@ -32,13 +32,6 @@ public class RegisterController extends HttpServlet {
         String phone = request.getParameter("phone");
         String password = request.getParameter("password");
 
-        response.getWriter().println(email);
-        response.getWriter().println(fname);
-        response.getWriter().println(lname);
-        response.getWriter().println(gender);
-        response.getWriter().println(phone);
-        response.getWriter().println(password);
-
         boolean isExistAccount = new AccountDAO().isExistAccount(email);
 
         if (isExistAccount) {

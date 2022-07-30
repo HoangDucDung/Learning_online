@@ -18,7 +18,7 @@
 
     <body>
 
-        <jsp:include page="base-view/headerUser.jsp"></jsp:include>
+        <jsp:include page="base-view/headerUser.jsp?page=Blog"></jsp:include>
 
             <!-- Blog Details Start -->
             <div class="blog-detail-container">

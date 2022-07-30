@@ -14,7 +14,7 @@
         <body>
 
 
-        <jsp:include page="base-view/headerUser.jsp"></jsp:include>
+        <jsp:include page="base-view/headerUser.jsp?page=Home"></jsp:include>
 
             <!-- Slider Start -->
 
@@ -23,13 +23,13 @@
                 <div class="slider-item mySlide_current">
                     <i class="slide-icon-right fas fa-angle-right" onclick="plusSlides(1)"></i>
                     <i class="slide-icon-left fas fa-angle-left" onclick="plusSlides(-1)"></i>
-                    <img src="${slider.imageUrl}" alt="">
+                    <img src="img/${slider.imageUrl}" alt="">
                     <div class="slider-desc-parent">
                         <div class="slider-desc">
                             <h5>${slider.subTitle}</h5>
                             <h1>${slider.title}</h1>
                             <p>${slider.description}</p>
-                            <a href=${sessionScope.account == null ? "login" : "course"} >
+                            <a href="${slider.navigationLink}" >
                                 Join Now
                             </a>
                         </div>
@@ -47,10 +47,9 @@
                 <div class="course-item">
                     <div class="tiny-picture">
                         <img src="${course.courseId.tinyPictureUrl}" alt="">
-                        <div><a href="#">Join Now</a></div>
+                        <div><a href="./course-detail?id=${course.courseId.courseId}">Join Now</a></div>
                     </div>
                     <div class="desc-best-course"> 
-                        <h2>${course.courseId.price} $</h2>
                         <div class="rated-star">
 
                             <c:forEach begin="1" end="${course.rating}">
@@ -66,10 +65,6 @@
                         <div class="item-desc">
                             <i class="fa-solid fa-user-tie"></i>
                             <span>${course.courseId.instructorId.firstName} ${course.courseId.instructorId.lastName}</span>
-                        </div>
-                        <div class="item-desc">
-                            <i class="fa-solid fa-user-graduate"></i>
-                            <span>30 Members</span>
                         </div>
                     </div>
 

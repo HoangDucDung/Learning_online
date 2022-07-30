@@ -3,7 +3,8 @@ package model;
 import java.sql.Date;
 import java.util.ArrayList;
 
-public class Blog {
+    public class Blog {
+
     private int blogID;
     private String title;
     private String description;
@@ -14,6 +15,15 @@ public class Blog {
     private String thumbnailUrl;
     private int numberOfView;
     private ArrayList<BlogCategory> blogCategories;
+    private ArrayList<BlogSubCategory> blogSubCategories;
+
+    public ArrayList<BlogSubCategory> getBlogSubCategories() {
+        return blogSubCategories;
+    }
+
+    public void setBlogSubCategories(ArrayList<BlogSubCategory> blogSubCategories) {
+        this.blogSubCategories = blogSubCategories;
+    }
 
     public Blog() {
     }
@@ -111,5 +121,5 @@ public class Blog {
         this.blogCategories = blogCategories;
     }
 
-  
+
 }

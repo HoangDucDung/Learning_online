@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
             <link rel="stylesheet" href="./css/login.css">
-            <script src="./js/register.js"></script>
+            <!--<script src="./js/register.js"></script>-->
             <title>Login</title>
         </head>
 
@@ -22,7 +22,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="card">
-                                <div class="card-header">Login</div>
+                                <div class="card-header">Change password</div>
                                 <div class="card-body">
 
                                 <c:if test="${success != null}">
@@ -69,7 +69,27 @@
         </div>
 
     </main>
+    <script>
+        function submitForm() {
+            var valuePassword = document.getElementById("password").value;
+            var valueRePassword = document.getElementById("re-password").value;
 
+            if (valuePassword.length < 6) {
+                document.getElementById("error-password").innerHTML = "Password must be greater than 6 characters";
+                return false;
+            } else {
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if (valueRePassword !== valuePassword) {
+                document.getElementById("error-re-password").innerHTML = "Confirm password not same as password";
+                return false;
+            } else {
+                document.getElementById("error-password").innerHTML = "";
+            }
+            return true;
+        }
+
+    </script>
 </body>
 
 </html>

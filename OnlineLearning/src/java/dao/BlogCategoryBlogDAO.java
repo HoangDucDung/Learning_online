@@ -53,5 +53,33 @@ public class BlogCategoryBlogDAO extends DBContext {
         }
 
     }
+    
+    public void deleteSubByBlogID(int blogId) {
+        try {
+            String sql = "DELETE FROM [BlogSubCategoryBlog]\n"
+                    + "WHERE BlogID = ?";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, blogId);
+
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BlogCategoryBlogDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void insertBlogSubCategoryBlog(int blogID, int subCategoryID) {
+        try {
+            String sql = "INSERT INTO [BlogSubCategoryBlog]([BlogID],[BlogSubCategoryID])\n"
+                    + " VALUES (?,?)";
+            PreparedStatement stm = connection.prepareCall(sql);
+            stm.setInt(1, blogID);
+            stm.setInt(2, subCategoryID);
+
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BlogCategoryBlogDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

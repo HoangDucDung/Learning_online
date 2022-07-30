@@ -53,7 +53,12 @@ public class ProfileController extends HttpServlet {
         }
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        String fileName = uploadFile(request);
+        String fileName = null;
+        if (uploadFile(request).equals("")) {
+            fileName = oldAccount.getProfilePictureUrl();
+        } else {
+            fileName = uploadFile(request);
+        }
         Account acc = new Account();
 
         acc.setAccountID(accountID);

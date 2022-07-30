@@ -40,7 +40,7 @@
                                         <label for="email-address" class="col-md-4 col-form-label text-md-right">E-Mail
                                             Address</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="email-address" class="form-control" name="email-address" required>
+                                            <input type="text" id="email-address" class="form-control" name="email-address">
                                         </div>
                                     </div>
 
@@ -53,7 +53,7 @@
                                     <div class="form-group row">
                                         <label for="first-name" class="col-md-4 col-form-label text-md-right">First Name</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="first-name" class="form-control" name="first-name" required>
+                                            <input type="text" id="first-name" class="form-control" name="first-name">
                                         </div>
                                     </div>
 
@@ -66,7 +66,7 @@
                                     <div class="form-group row">
                                         <label for="last-name" class="col-md-4 col-form-label text-md-right">Last Name</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="last-name" class="form-control" name="last-name" required>
+                                            <input type="text" id="last-name" class="form-control" name="last-name">
                                         </div>
                                     </div>
                                     <div class="form-group row margin-bottom-0" >
@@ -98,7 +98,7 @@
                                     <div class="form-group row">
                                         <label for="phone" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="phone" class="form-control" name="phone" required>
+                                            <input type="text" id="phone" class="form-control" name="phone">
                                         </div>
                                     </div>
                                     
@@ -111,7 +111,7 @@
                                     <div class="form-group row">
                                         <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                         <div class="col-md-6">
-                                            <input type="password" id="password" class="form-control" name="password" required>
+                                            <input type="password" id="password" class="form-control" name="password">
                                         </div>
                                     </div>
 
@@ -124,7 +124,7 @@
                                     <div class="form-group row">
                                         <label for="re-password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                                         <div class="col-md-6">
-                                            <input type="password" id="re-password" class="form-control" name="re-password" required>
+                                            <input type="password" id="re-password" class="form-control" name="re-password">
                                         </div>
                                     </div>
 

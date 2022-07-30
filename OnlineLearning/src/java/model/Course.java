@@ -2,6 +2,7 @@ package model;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Course {
 
@@ -15,7 +16,96 @@ public class Course {
     private Date modifiedDate;
     private BigDecimal price;
     private boolean status;
+    private boolean featured;
+    private String videoIntroduce;
+    private ArrayList<String> objectives;
+    private String aboutCourse;
+    private ArrayList<Subject> listSubject;
+    private int star;
+    private int numberPeopleLearning;
+    private int numberLesson;
+    private ArrayList<CoursePricePackage> listPrice;
+    private ArrayList<Account> listExpertCanAccess;
 
+    public ArrayList<Account> getListExpertCanAccess() {
+        return listExpertCanAccess;
+    }
+
+    public void setListExpertCanAccess(ArrayList<Account> listExpertCanAccess) {
+        this.listExpertCanAccess = listExpertCanAccess;
+    }
+    
+    public ArrayList<CoursePricePackage> getListPrice() {
+        return listPrice;
+    }
+
+    public boolean isFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(boolean featured) {
+        this.featured = featured;
+    }
+    
+    public int getNumberLesson() {
+        return numberLesson;
+    }
+
+    public void setNumberLesson(int numberLesson) {
+        this.numberLesson = numberLesson;
+    }
+
+    public void setListPrice(ArrayList<CoursePricePackage> listPrice) {
+        this.listPrice = listPrice;
+    }
+    public String getVideoIntroduce() {
+        return videoIntroduce;
+    }
+
+    public void setVideoIntroduce(String videoIntroduce) {
+        this.videoIntroduce = videoIntroduce;
+    }
+
+    public ArrayList<String> getObjectives() {
+        return objectives;
+    }
+
+    public void setObjectives(ArrayList<String> objectives) {
+        this.objectives = objectives;
+    } 
+
+    public String getAboutCourse() {
+        return aboutCourse;
+    }
+
+    public void setAboutCourse(String aboutCourse) {
+        this.aboutCourse = aboutCourse;
+    }  
+
+    public int getNumberPeopleLearning() {
+        return numberPeopleLearning;
+    }
+
+    public void setNumberPeopleLearning(int numberPeopleLearning) {
+        this.numberPeopleLearning = numberPeopleLearning;
+    }
+    
+    public int getStar() {
+        return star;
+    }
+
+    public void setStar(int star) {
+        this.star = star;
+    } 
+
+    public ArrayList<Subject> getListSubject() {
+        return listSubject;
+    }
+
+    public void setListSubject(ArrayList<Subject> listSubject) {
+        this.listSubject = listSubject;
+    }
+    
     public Course() {
     }
 

@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.quiz-header-left a i {
+    color: #fff;
+}
+
+.quiz-header {
+    background-color: #29303b;
+    color: #fff;
+    padding: 20px 30px 15px 30px;
+}
+
+.quiz-header-left {
+    display: flex;
+    font-size: 30px;
+}
+
+.quiz-header-left h4 {
+    color: #fff;
+    margin-left: 30px;
+}
+
+.quiz-body {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.quiz-title {
+    margin: 30px 10px;
+}
+
+.quiz-body ul {
+    list-style: none;
+}
+
+.quiz-body>ul>li {
+    margin-bottom: 35px;
+}
+
+.quiz-question {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.quiz-list-answer li {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.btn-submit {
+    background-color: rgb(0, 86, 210);
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+        "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"
+        , "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+}
+
+#nav-bar {
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-size: cover;
+    display: flex;
+    float: left;
+    width: 15%;
+}
+
+#nav-bar a {
+    text-decoration: none;
+}
+
+#nav-bar hr {
+    border: 0;
+    margin: 0 16px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+#nav-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+#logo {
+    color: #fff;
+    font-weight: 800;
+    display: flex;
+    text-align: center;
+    padding: 24px 16px;
+    justify-content: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, .8);
+    padding: 16px;
+    display: block;
+    text-align: left;
+    font-size: 13.6px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+#top-bar {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+    height: 70px;
+    list-style-type: none;
+    padding: 0 16px;
+    margin-bottom: 24px;
+}
+
+.topbar-divider {
+    width: 0;
+    border-right: 1px solid #e3e6f0;
+    height: calc(4.375rem - 2rem);
+    margin: auto 1rem;
+    display: block;
+}
+
+#top-bar ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    height: 70px;
+    justify-content: right;
+}
+
+#top-bar img {
+    width: 32px;
+    height: 32px;
+}
+
+#top-bar li {
+    position: relative;
+}
+
+#dropdown-toggle {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    text-decoration: none;
+    font-size: 12.8px;
+    line-height: 70px;
+}
+
+#dropdown-toggle span {
+    margin-right: 8px;
+    color: #858796;
+}
+
+#dropdown-toggle img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+#dropdown-menu {
+    position: absolute;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+    background-color: #fff;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    width: auto;
+    right: 0;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 8px 0;
+    margin-top: 2px;
+    border: 1px;
+    min-width: 10rem;
+}
+
+#dropdown-menu i {
+    margin-right: 8px;
+}
+
+#dropdown-menu a {
+    text-decoration: none;
+    color: #3a3b45;
+    font-weight: 400;
+    font-size: 13.6px;
+    padding: 4px 24px;
+}
+
+#dropdown-menu a:hover {
+    background-color: #eaecf4;
+}
+
+#dropdown-menu a:active {
+    color: #fff;
+    background-color: #4e73df;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #eaecf4;
+}
+
+
+#page-header {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
+}
+
+#page-header h1 {
+    color: #5a5c69;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+#page-header a {
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #4e73df;
+    border-color: #4e73df;
+    border: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 0.2rem;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 400;
+    height: 23px;
+}
+
+.save{
+    display: block;
+    width: 95px;
+    height: 35px;
+    margin: 20px auto 15px;
+    font-size: 13px;
+    color: #d8e0f6;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #5b7fe9;
+}
+
+.post{
+    width: 100%;
+    height: fit-content;
+}
+
+.title-post{
+    width: 475px;
+    height: 45px;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.min-height-100vh {
+    min-height: 100vh;
+}
+
+.width85 {
+    width: 85%;
+}
+
+.width350 {
+    width: 350px;
+}
+
+.form-submit {
+    padding: 20px;
+}
+
+.select-tag-category {
+    padding: 14px 30px; 
+    width: 508px; 
+    font-size: 16px;
+}
+
+.option-tag {
+    padding: 6px 0;
+}
+
+.property-display {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.post-desc {
+    width: 505px;
+    padding: 15px 20px;
+}
+
+.margin-auto-0 {
+    margin: auto 0;
+}
+
+#add-blog {
+    background-color: #365dcd;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.category-item {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.select-tag {
+    padding: 6px 10px;
+}
+
+.bg-info {
+    line-height: 150px;
+    font-size: 50px;
+}
+.quiz-time {
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    height: 150px;
+}
+
+.button {
+    width: 40%;
+}
+
+.footer {
+    width: 100%;
+    background-color: #06BBCC;
+
+}
+
+.footer ul {
+    width: 60%;
+    padding: 100px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer ul li {
+    color: #fff;
+    width: 30%;
+}
+
+.footer ul li h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer ul li p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.footer ul li i {
+    margin-right: 10px;
+}
+
+.table {
+    margin: 500px 0;
+    width: 60%;
+    margin: 100px auto;
+}
+
+
+
+

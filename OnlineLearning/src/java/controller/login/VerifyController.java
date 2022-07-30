@@ -31,7 +31,7 @@ public class VerifyController extends HttpServlet {
         String phone = request.getParameter("phone");
         String password = request.getParameter("password");
         
-        accountDao.insertAccount(email, fname, lname, gender, phone);
+        accountDao.insertAccount(email, fname, lname, gender, phone, true);
         
         int accountId = accountDao.getAccountIdByEmail(email);
 

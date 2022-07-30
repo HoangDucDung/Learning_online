@@ -1,4 +1,3 @@
-
 package model;
 
 public class Slider {
@@ -11,12 +10,11 @@ public class Slider {
     private String imageUrl;
     private int order;
     private boolean status;
-    private SliderCollection sliderCollectionID;
 
     public Slider() {
     }
 
-    public Slider(int sliderID, String title, String subTitle, String description, String navigationLink, String imageUrl, int order, boolean status, SliderCollection sliderCollectionID) {
+    public Slider(int sliderID, String title, String subTitle, String description, String navigationLink, String imageUrl, int order, boolean status) {
         this.sliderID = sliderID;
         this.title = title;
         this.subTitle = subTitle;
@@ -25,7 +23,6 @@ public class Slider {
         this.imageUrl = imageUrl;
         this.order = order;
         this.status = status;
-        this.sliderCollectionID = sliderCollectionID;
     }
 
     public int getSliderID() {
@@ -90,14 +87,6 @@ public class Slider {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public SliderCollection getSliderCollectionID() {
-        return sliderCollectionID;
-    }
-
-    public void setSliderCollectionID(SliderCollection sliderCollectionID) {
-        this.sliderCollectionID = sliderCollectionID;
     }
 
 }

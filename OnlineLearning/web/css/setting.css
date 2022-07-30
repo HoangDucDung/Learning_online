@@ -1,0 +1,144 @@
+a {
+    text-decoration: none!important;
+}
+
+td > a:hover {
+    text-decoration: underline!important;
+}
+
+#add-blog {
+    background-color: #365dcd;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    padding: 0 24px;
+}
+
+.container-title {
+    color: #5a5c69;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.container-table {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+    border-radius: 10px;
+}
+
+.table-header {
+    font-size: 16px;
+    color: #4e73df;
+    padding: 16px 20px;
+    font-weight: 500;
+    background-color: #f8f9fc;
+}
+
+.table-content {
+    padding: 16px 20px;
+}
+
+.search label {
+    color: #858796;
+    font-size: 16px;
+}
+
+.search input {
+    margin-left: 7px;
+    padding: 6px 10px;
+    outline: none;
+    font-size: 15px;
+    color: #858796;
+}
+
+th > i{
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.img-thumbnail-blog {
+    text-align: center;
+    width: 78px;
+}
+
+#add-blog {
+    background-color: #365dcd;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    padding: 0 24px;
+}
+
+.container-title {
+    color: #5a5c69;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.container-table {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+    border-radius: 10px;
+}
+
+.table-header {
+    font-size: 16px;
+    color: #4e73df;
+    padding: 16px 20px;
+    font-weight: 500;
+    background-color: #f8f9fc;
+}
+
+.table-content {
+    padding: 16px 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+}
+
+th i {
+    float: right;
+    font-size: 22px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    color: #000;
+}
+
+th i {
+    text-align: right;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+.pagging-list {
+    display: flex;
+    margin-top: 30px;
+}
+
+.img-thumbnail-blog {
+    text-align: center;
+    width: 78px;
+}
+
+.form-search{
+    margin-bottom: 24px;
+}

@@ -4,19 +4,21 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class Account {
+
     private int accountID;
     private String firstName;
     private String lastName;
     private String email;
     private String profilePictureUrl;
-    private Role role;   
+    private Role role;
     private BigDecimal balance;
     private Timestamp createdTime;
     private Timestamp modifiedTime;
-    private String phone;    
+    private String phone;
     private String address;
     private Gender gender;
     private String password;
+    private Boolean status;
 
     public Account() {
     }
@@ -37,6 +39,26 @@ public class Account {
         this.password = password;
     }
 
+    public Account(int accountID, String firstName, String lastName, String email, String profilePictureUrl, Role role, BigDecimal balance, Timestamp createdTime, Timestamp modifiedTime, String phone, String address, Gender gender, String password, Boolean status) {
+        this.accountID = accountID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.profilePictureUrl = profilePictureUrl;
+        this.role = role;
+        this.balance = balance;
+        this.createdTime = createdTime;
+        this.modifiedTime = modifiedTime;
+        this.phone = phone;
+        this.address = address;
+        this.gender = gender;
+        this.password = password;
+        this.status = status;
+    }
+
+    
+    
+    @Deprecated
     public int getAccountID() {
         return accountID;
     }
@@ -139,6 +161,25 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
-    }   
+    }
+
+    public int getId() {
+        return this.accountID;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    
+    
+    @Override
+    public String toString() {
+        return "Account{" + "accountID=" + accountID + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", profilePictureUrl=" + profilePictureUrl + ", role=" + role + ", balance=" + balance + ", createdTime=" + createdTime + ", modifiedTime=" + modifiedTime + ", phone=" + phone + ", address=" + address + ", gender=" + gender + ", password=" + password + '}';
+    }
     
 }

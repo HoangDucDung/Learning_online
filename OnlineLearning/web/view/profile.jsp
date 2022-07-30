@@ -91,7 +91,7 @@
 
                         <tr>
                             <td>Avatar</td>
-                            <td><input type="file" name="photo" value=""/></td>
+                            <td><input type="file" name="photo" value="" accept="image/*"/></td>
                         </tr>
 
                         <tr>

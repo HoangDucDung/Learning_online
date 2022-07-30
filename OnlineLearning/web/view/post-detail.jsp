@@ -1,84 +1,70 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
     <head>
-        <jsp:include page="./base-view/baseTagAdmin.jsp"></jsp:include>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Manage Post</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--Font Awesome-->
+        <script src="https://kit.fontawesome.com/7b806b5ab9.js" crossorigin="anonymous"></script>
+        <!--Jquery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../css/post-management.css">
+    </head>
 
-            <title>Post detail</title>
-
-            <script src="../ckeditor/ckeditor.js"></script>
-        </head>
-
-        <body>
-            <div class="display-flex min-height-100vh">
-
-            <jsp:include page="./base-view/headerAdmin.jsp"></jsp:include>
-
-                <div class="width85">
-
-                <jsp:include page="./base-view/dropDownAdmin.jsp"></jsp:include>
-
-                    <!-- Container Start -->
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 min-vh-100 bg-dark p-0">
+                    <jsp:include page="sidenav.jsp?page=Manage Post"/>
+                </div>
+                <div class="col-sm-10 p-0">
+                    <jsp:include page="navbar-header.jsp?page=Post Detail"/>
 
                     <div class="container">
-                        <h1 class="container-title">Post</h1>
                         <div class="container-table post">
-                            <form action="../management/post-detail?bid=${bid}" method="post" class="form-submit" enctype="multipart/form-data">
-                            <h4>Title</h4>
-                            <input type="text" name="title" class="title-post" id="" value="${Post.getTitle()}" required>
-                            <h4>Category</h4>
-                            <c:forEach items="${listBlogCategory}" var="categoryBlog">
-                                <div class="category-item">
-                                    <input type="checkbox" name="blogCategory" value="${categoryBlog.blogCategoryID}" id="${categoryBlog.name}-${categoryBlog.blogCategoryID}"
-                                           <c:forEach items="${listCategoryOfBlog}" var="cate">
-                                               ${cate.blogCategoryID == categoryBlog.blogCategoryID ? "checked" : ""} 
-                                           </c:forEach>
-                                           >
-                                    <label for="${categoryBlog.name}-${categoryBlog.blogCategoryID}">${categoryBlog.name}</label>
-                                </div>
-                            </c:forEach>
-                            <h4>Display</h4>
-                            <div class="property-display">
-                                <div>
-                                    <input type="radio" value="hidden" id="hidden" name="status" 
-                                           <c:choose>
-                                               <c:when test="${bid == null}">checked</c:when>
-                                               <c:otherwise> 
-                                                   ${Post.display ? '' : 'checked'}
-                                               </c:otherwise>
-                                           </c:choose>
-                                           />
-                                    <label for="hidden" >Hidden</label>
-                                </div>
-                                <div>
-                                    <input type="radio" value="display" id="display" name="status"
-                                           <c:if test="${Post.display}">checked</c:if>
-                                               >
-                                           <label for="display" >Display</label>
-                                    </div>
-
-                                </div>
-                                <h4>Link IMG post</h4>
-                                <input type="file" name="photo" class="title-post" id="" value="img/${Post.thumbnailUrl}" required>
-                            <c:if test="${Post.thumbnailUrl != null}">
-                                <img src="../img/${Post.thumbnailUrl}" class="img-file">
-                            </c:if>
-                            <h4>Description</h4>
-                            <textarea required class="post-desc" name="description" id="" cols="66" rows="6">${Post.description}</textarea>
-                            <h4>Content</h4>
-                            <textarea required id="editor1" name="content" cols="50" rows="10">${Post.content}</textarea>
-                            <script>
-                                CKEDITOR.replace('content');
-                            </script>
-                            <input type="submit" value="${action}" class="save" name="action">
-                        </form>
+                            <a class="back" href="../management/post"><i class="fa-solid fa-angle-left"></i>Back</a>
+                            <div class="form-submit">
+                                <h4 class="title">Title</h4>
+                                <span class="input-box">${blog.title}</span>
+                                <h4 class="title">Image</h4>
+                                <img class="img-thumbnail-url" src="../img/${blog.thumbnailUrl}">
+                                <h4 class="title">Description</h4>
+                                <span class="input-box">${blog.description}</span>
+                                <h4 class="title">Content Detail</h4>
+                                <span class="input-box">${blog.content}</span>
+                                <h4 class="title">Created Date</h4>
+                                <span class="input-box">${blog.createdDate}</span>
+                                <h4 class="title">Author</h4>
+                                <span class="input-box">${blog.authorID.firstName} ${blog.authorID.lastName}</span>
+                                <h4 class="title">Display</h4>
+                                <span class="input-box"><i class="fa-solid button-on-off ${blog.display ? 'fa-toggle-on' : 'fa-toggle-off'}"></i></span>
+                                <form action="../management/post-detail" method="POST">
+                                    <input type="hidden" value="${blog.blogID}" name="id">
+                                    <button type="submit" class="action-btn"><i class="fa-solid fa-pencil"></i>Edit</button>
+                                </form>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Container End -->
             </div>
         </div>
+
+        <!-- Bootstrap JavaScript -->    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
     </body>
 
 </html>
+

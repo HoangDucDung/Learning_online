@@ -32,5 +32,15 @@
                     <i class="fa-solid fa-bars-progress"></i>
                     <span>Manager Slide</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./slide">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span>Manage Access And Request</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./slide">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span>Manage Permission</span></a>
+            </li>
         </ul>
     </div>

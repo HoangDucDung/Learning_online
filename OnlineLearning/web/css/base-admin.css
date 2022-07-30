@@ -1,0 +1,16 @@
+.nav-link {
+    padding: 16px;
+    display: block;
+    text-align: left;
+    font-size: 13.6px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
