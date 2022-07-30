@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.lesson-header-left a i {
+    color: #fff;
+}
+
+.lesson-active {
+    background-color: #ccc;
+}
+
+.lesson-header {
+    background-color: #29303b;
+    color: #fff;
+    padding: 20px 30px 15px 30px;
+}
+
+.lesson-header-left {
+    display: flex;
+    font-size: 30px;
+}
+
+.lesson-header-left h4 {
+    color: #fff;
+    margin-left: 30px;
+}
+
+.lesson-body {
+    display: flex;
+
+}
+
+.lesson-body-left {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.lesson-body-left h2{
+    padding: 30px 50px;
+}
+.lesson-body-left p{
+    padding: 0 50px;
+}
+
+
+.lesson-body-right {
+    width: 20%;
+}
+
+.lesson-body-right h4 {
+    padding: 15px;
+}
+
+.lesson-body-lesson-list {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.lesson-body-lesson-item {
+    letter-spacing: 1.2px;
+    padding: 15px 25px;
+}
+
+.lesson-body-lesson-item a {
+    width: 100%;
+    height: 100%;
+    color: #000;
+    display: flex;
+    justify-content:space-between;
+}
+
+.lesson-body-lesson-item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.lesson-body-lesson-item i {
+    color: rgb(16, 210, 16);
+}

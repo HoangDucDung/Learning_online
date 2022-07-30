@@ -1,0 +1,30 @@
+.container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.container i {
+    color: #06BBCC;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    font-size: 70px;
+}
+
+.container p {
+    font-size: 16px;
+    color: #52565B;
+    width: 40%;
+    margin: 20px auto;
+}
+
+.container a {
+    padding: 16px 48px;
+    color: #fff;
+    background-color: #06BBCC;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+}
